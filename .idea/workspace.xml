@@ -32,6 +32,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="feature/Actividad_3" />
+                    <option name="lastUsedInstant" value="1732556608" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="feature/Actvidad_2" />
                     <option name="lastUsedInstant" value="1732554217" />
                   </RecentBranch>
@@ -65,7 +69,7 @@
   "keyToString": {
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/Actvidad__2",
+    "git-widget-placeholder": "feature/Actividad__3",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "D:/usuv/Aplicaciones moviles/actividadKotlin/src/Main.kt"
   }

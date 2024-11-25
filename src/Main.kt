@@ -1,6 +1,7 @@
 fun main() {
     getActividad1()
     getActividad2()
+    getActividad3()
     }
 
 fun getActividad1() {
@@ -48,4 +49,49 @@ fun getActividad2() {
         }
     }
 }
+fun getActividad3() {
+
+    println("Introdzca la expresion matematica")
+    val expresion = readLine()
+    val expresionCharArray: ArrayList<Char> = ArrayList<Char>()
+    var parentesis = 0
+    var corchetes = 0
+    var llaves = 0
+    if (expresion != null) {
+        for (char in expresion) {
+
+           /* if () {
+            } else */if (char == '(') {
+                parentesis++
+                expresionCharArray.add(char)
+            } else if (char == ')') {
+                parentesis--
+                expresionCharArray.add(char)
+            } else if (char == '{') {
+                llaves++
+                expresionCharArray.add(char)
+            } else if (char == '}') {
+                llaves--
+                expresionCharArray.add(char)
+            } else if (char == '[') {
+                corchetes++
+                expresionCharArray.add(char)
+            } else if (char == ']') {
+                corchetes--
+                expresionCharArray.add(char)
+            }
+        }
+        if (parentesis < 0 || corchetes < 0 || llaves < 0) {
+            return println("La expresion tiene parentesis, corchetes o llaves mal formados")
+        } else if (parentesis == 0 && llaves == 0 && corchetes == 0) {
+            for (char in expresionCharArray) {
+                
+            }
+        }
+    }
+
+
+}
+
+
 
