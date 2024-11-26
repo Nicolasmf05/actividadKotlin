@@ -1,6 +1,6 @@
 fun main() {
-    getActividad1()
-    getActividad2()
+    //getActividad1()
+    //getActividad2()
     getActividad3()
     }
 
@@ -53,40 +53,51 @@ fun getActividad3() {
 
     println("Introdzca la expresion matematica")
     val expresion = readLine()
-    val expresionCharArray: ArrayList<Char> = ArrayList<Char>()
+    val ultimoEnAbrirseArray: ArrayList<Char> = ArrayList<Char>()
     var parentesis = 0
     var corchetes = 0
     var llaves = 0
+    var ultimoEnAbrirse: Char? = 'a'
+
     if (expresion != null) {
         for (char in expresion) {
 
-           /* if () {
-            } else */if (char == '(') {
+            if (char == '(') {
                 parentesis++
-                expresionCharArray.add(char)
+                ultimoEnAbrirseArray.add('(')
             } else if (char == ')') {
                 parentesis--
-                expresionCharArray.add(char)
+                if (ultimoEnAbrirseArray.last() != '(' || ultimoEnAbrirseArray.isEmpty()) {
+                    return println("La expresion tiene parentesis mal formados")
+                } else {
+                    ultimoEnAbrirseArray.removeLast()
+                }
             } else if (char == '{') {
                 llaves++
-                expresionCharArray.add(char)
+                ultimoEnAbrirseArray.add('{')
             } else if (char == '}') {
                 llaves--
-                expresionCharArray.add(char)
+                if (ultimoEnAbrirseArray.last() != '{' || ultimoEnAbrirseArray.isEmpty()) {
+                    return println("La expresion tiene llaves mal formados")
+                } else {
+                ultimoEnAbrirseArray.removeLast()
+                }
             } else if (char == '[') {
                 corchetes++
-                expresionCharArray.add(char)
+                ultimoEnAbrirseArray.add('[')
             } else if (char == ']') {
                 corchetes--
-                expresionCharArray.add(char)
+                if (ultimoEnAbrirseArray.last() != '[' || ultimoEnAbrirseArray.isEmpty()) {
+                    return println("La expresion tiene corchetes mal formados")
+                } else {
+                    ultimoEnAbrirseArray.removeLast()
+                }
             }
         }
-        if (parentesis < 0 || corchetes < 0 || llaves < 0) {
+        if (parentesis != 0 || corchetes != 0 || llaves != 0 || ultimoEnAbrirseArray.isEmpty()) {
             return println("La expresion tiene parentesis, corchetes o llaves mal formados")
         } else if (parentesis == 0 && llaves == 0 && corchetes == 0) {
-            for (char in expresionCharArray) {
-                
-            }
+            return println("La expresion esta correctamente formada")
         }
     }
 
