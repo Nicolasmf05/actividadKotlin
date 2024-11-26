@@ -101,8 +101,13 @@ fun getActividad3() {
         }
     }
 
-
+    fun getActividad4() {
+        println()
+        val saltarCorrerArray: Array<String> = arrayOf("correr", "saltar", "correr", "saltar", "correr")
+        var lineas: String = "_|_|_"
+    }
 }
+
 
 
 
