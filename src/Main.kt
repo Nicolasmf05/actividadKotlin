@@ -1,7 +1,8 @@
 fun main() {
     //getActividad1()
     //getActividad2()
-    getActividad3()
+    //getActividad3()
+    getActividad4()
     }
 
 fun getActividad1() {
@@ -80,7 +81,7 @@ fun getActividad3() {
                 if (ultimoEnAbrirseArray.last() != '{' || ultimoEnAbrirseArray.isEmpty()) {
                     return println("La expresion tiene llaves mal formados")
                 } else {
-                ultimoEnAbrirseArray.removeLast()
+                    ultimoEnAbrirseArray.removeLast()
                 }
             } else if (char == '[') {
                 corchetes++
@@ -100,13 +101,33 @@ fun getActividad3() {
             return println("La expresion esta correctamente formada")
         }
     }
+}
 
     fun getActividad4() {
         println()
-        val saltarCorrerArray: Array<String> = arrayOf("correr", "saltar", "correr", "saltar", "correr")
-        var lineas: String = "_|_|_"
+        val saltarCorrerArray: Array<String> = arrayOf("saltar", "saltar", "saltar", "saltar", "saltar")
+        var lineas: String = "|||||"
+        var lineasFinal: ArrayList<Char> = ArrayList<Char>()
+        for (i in saltarCorrerArray.indices) {
+            if (saltarCorrerArray[i] == "correr" && lineas[i] == '_') {
+                lineasFinal.add(i,'_')
+            } else if (saltarCorrerArray[i] == "saltar" && lineas[i] == '|') {
+                lineasFinal.add(i,'|')
+            } else if (saltarCorrerArray[i] == "saltar" && lineas[i] == '_') {
+                lineasFinal.add(i,'x')
+            } else if (saltarCorrerArray[i] == "correr" && lineas[i] == '|') {
+                lineasFinal.add(i,'/')
+            } else {
+                lineasFinal.add(i,'?')
+            }
+        }
+        if (lineasFinal.contains('x') || lineasFinal.contains('/') || lineasFinal.contains('?')) {
+            return println(lineasFinal.joinToString("") + " " + "false")
+        } else {
+            return println(lineasFinal.joinToString("") + " " + "true")
+        }
     }
-}
+
 
 
 
